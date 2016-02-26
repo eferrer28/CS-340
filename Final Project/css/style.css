@@ -1,0 +1,22 @@
+.main-container{
+    
+    padding-right: 5em;
+    padding-left: 5em;
+    
+}
+
+fieldset {
+   border-width: thick;
+}
+
+
+table tr td a {
+    display:block;
+    height:100%;
+    width:100%;
+}
+
+table tr td {
+    padding-left: 0;
+    padding-right: 0;
+}
