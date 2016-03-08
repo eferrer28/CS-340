@@ -1,5 +1,3 @@
-
-
 <?php
 
 $pageTitle = "Clients Of";
@@ -9,7 +7,6 @@ include("includes/header.php");
 ?>
 
 <h3><?php echo $pageTitle  ?></h3>
-
 
 <?php $yep = $_GET['fname'];
       $yep1 = $_GET['lname'];
@@ -78,8 +75,8 @@ WHERE a.first_name = ?
     <div>
     <input type="text" name="fname" placeholder="First Name" required/>
     <input type="text" name="lname" placeholder="Last Name" required/>
-    <input type="text" name="dob" placeholder="yyyy-mm-dd" required/>
-    <input type="submit" name="insert" value="Add" id="datepicker" required />
+    <input type="text" name="dob" placeholder="yyyy-mm-dd" id="datepicker" required/>
+    <input type="submit" name="insert" value="Add"   />
 </div>
            
 </form>
@@ -90,7 +87,3 @@ include("includes/footer.php");
 
 
 ?>
-
-
-
-

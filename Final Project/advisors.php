@@ -55,7 +55,7 @@ include("includes/header.php");
     <div>
     <input type="text" name="fname" placeholder="First Name" required/>
     <input type="text" name="lname" placeholder="Last Name" required/>
-    <input type="text" name="dob"  id="datepicker" required/>
+    <input type="text" name="dob" placeholder="yyyy-mm-dd"  id="datepicker" required/>
     <input type="submit" name="insert" value="Add" required/>
 </div>
            

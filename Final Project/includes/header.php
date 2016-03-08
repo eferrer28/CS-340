@@ -70,8 +70,8 @@ if($mysqli->connect_errno){
                     </li>
     
                     </ul>
-                
-                  <li><a href="buystocks.php">Clients</a></li>
+                    <li><a href="addportfolio.php">Create Portfolio</a></li>
+                  <li><a href="buystocks.php">Buy Stocks</a></li>
                 </ul>
             </div>
         </nav>

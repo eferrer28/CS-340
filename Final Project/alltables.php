@@ -1,16 +1,11 @@
 
-
-
 <?php
 
-$description = "This page has to do with the advisors";
-$pageTitle = "Advisors";
+$pageTitle = "All Tables";
 
 include("includes/header.php");
 
 ?>
-
-
 
 <h3><?php echo $pageTitle  ?></h3>
 
@@ -25,10 +20,9 @@ include("includes/header.php");
             <td>ID</td>
 			<td>First Name</td>
 			<td>Last Name</td>
-			<td>Date of Birth</td>
-            redX
+			<td>Date of Birth</td>   
 		</tr>
-        RED X
+        
 
 <?php
     
@@ -229,11 +223,55 @@ FROM stock s
         
 
 
+<!-- This displays the port_stock table -->
+
+        <div>
+	<table class="table table-bordered">
+        <label>This is the Port_Stock Table</label>
+
+		<tr>
+            <td>stock_id</td>
+			<td>portfolio)id</td>
+			<td>purchase_price</td>
+            <td>qty</td>
+            <td>worth</td>
+
+		</tr>
+
+<?php
+    
+    if(!($stmt = $mysqli->prepare("SELECT stock_id, portfolio_id, purchase_price, qty, worth FROM port_stock ")))
+    {
+        echo "Prepare failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+    }
+         
+    if(!$stmt->execute())
+    {
+	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+    }
+    if(!$stmt->bind_result($stock_id, $portfolio_id, $purchase_price, $qty, $worth))
+    {
+     echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;   
+    }
+        
+        
+        while($stmt->fetch()){
+        echo "<tr><td>$stock_id</td><td>$portfolio_id</td><td>$purchase_price</td><td>$qty</td><td>$worth</td></tr>";
+}
+    $stmt->close();
+    
+    ?>
+	</table>
+</div>        
+      <!-- End the display for the portfolio table -->  
+
+
 <?php
 include("includes/footer.php"); 
 
 
 ?>
+
 
 
 

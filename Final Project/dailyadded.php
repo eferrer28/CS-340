@@ -17,7 +17,7 @@ include("includes/header.php");
         echo "Prepare failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
     }
     
-if(!($stmt->bind_param("sdds",$_GET['compname'],$_POST['opened'],$_POST['closed'], $_POST['dateof']))){
+if(!($stmt->bind_param("sdds",$_POST['compname'],$_POST['opened'],$_POST['closed'], $_POST['dateof']))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
             

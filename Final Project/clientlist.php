@@ -2,8 +2,7 @@
 
 <?php
 
-$description = "This page has to do with the advisors";
-$pageTitle = "Advisors";
+$pageTitle = "Clients with Holdings";
 
 include("includes/header.php");
 
@@ -20,7 +19,7 @@ include("includes/header.php");
 
         <div>
 	<table class="table table-bordered">
-        <label>This is the clients table</label>
+        <label>List of Clients with a Portfolio</label>
 
 		<tr>
             <td>Client_ID</td>

@@ -1,7 +1,6 @@
 <?php
 
-$description = "This page has to do with the advisors";
-$pageTitle = "Advisors";
+$pageTitle = "Stock Added";
 
 include("includes/header.php");
 
@@ -33,12 +32,13 @@ if(!($stmt->bind_param("ss",$_POST['cname'],$_POST['csymbol']))){
      $stmt->close();
     ?>
             <div>
-<form method="post" action="dailyadded.php?<?php echo  "compname=$cname"?>">
+<form method="post" action="/~ferrere/340/final/dailyadded.php?">
 <label>Add Today's Stock info for <?php echo $cname ?></label>
-    <div>
+    <div>,
     <input type="text" name="open" placeholder="Open Price" required/>
     <input type="text" name="close" placeholder="Close Price" required/>
-    <input type="text" name="date" placeholder="yyyy-mm-dd" required/>
+    <input type="text" name="date" placeholder="yyyy-mm-dd" id="datepicker" required/> 
+    <input type="hidden" name="compname" value=<?php echo $cname ?>/>
     <input type="submit" name="insert" value="Add" required/>
 </div>
            

@@ -1,27 +1,22 @@
 <?php
 
-$pageTitle = "Client Added";
+$pageTitle = "Portfolio Created";
 
 include("includes/header.php");
 
 ?>
 
-
-
 <h3><?php echo $pageTitle  ?></h3>
-
-
-  
+	        
+        
 <?php
     
-    if(!($stmt = $mysqli->prepare("INSERT INTO client (advisor_id, first_name, last_name, dob) VALUES ((SELECT advisor_id from advisor a WHERE a.first_name = ? AND a.last_name = ?),?,?,?)")))
+    if(!($stmt = $mysqli->prepare("INSERT INTO daily (stock_id, opened, closed, dateof) VALUES ((SELECT stock_id from stock s WHERE s.company = ? ),?,?,?)")))
     {
         echo "Prepare failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
     }
     
-    
-    
-if(!($stmt->bind_param("sssss",$_GET['afname'],$_GET['alname'],$_POST['fname'],$_POST['lname'],$_POST['dob']))){
+if(!($stmt->bind_param("sdds",$_POST['compname'],$_POST['opened'],$_POST['closed'], $_POST['dateof']))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
             
@@ -30,19 +25,10 @@ if(!($stmt->bind_param("sssss",$_GET['afname'],$_GET['alname'],$_POST['fname'],$
 	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
     }
     else {
-        echo "Added " . $stmt->affected_rows . " rows to the client table.";
+        echo "Added " . $stmt->affected_rows . " rows to the daily table for this stock. And the latest stock information has been added";
     }   
-    
     ?>
-
-
 
 <?php
 include("includes/footer.php"); 
-
-
 ?>
-
-
-
-

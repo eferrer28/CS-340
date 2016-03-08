@@ -97,6 +97,44 @@ FROM stock s
             </span>
 </form>
 
+<!-- This displays the update -->
+ 
+<form method="post" action="updatestock.php">
+<label>Update Stock</label>
+    <table>
+    <tr>
+    <td>
+    <select class="form-control" id="sel1" name="company">
+     <?php           
+        if(!($stmt = $mysqli->prepare("SELECT company FROM stock
+ ")))
+    {
+        echo "Prepare failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+    }
+          
+    if(!$stmt->execute())
+    {
+	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
+    }
+    if(!$stmt->bind_result($company))
+    {
+     echo "Bind failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;   
+    }  
+    while($stmt->fetch()){
+        echo "<option>". $company ."</option>";
+    }
+        $stmt->close();
+    ?>
+    </select>
+    </td>
+    </tr> 
+        
+    </table>
+        <input type="text" name="csymbol" placeholder="Stock Symbol" required/>
+     <input type="submit" name="insert" value="Update" />
+           
+</form>
+
 <?php
 include("includes/footer.php"); 
 
