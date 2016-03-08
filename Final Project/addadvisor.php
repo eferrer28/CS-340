@@ -1,6 +1,5 @@
 <?php
 
-$description = "This page has to do with the advisors";
 $pageTitle = "Advisors";
 
 include("includes/header.php");

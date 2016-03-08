@@ -7,16 +7,27 @@ include("includes/header.php");
 ?>
 
 <h3><?php echo $pageTitle  ?></h3>
-	        
+
+<?php
+    
+$names = $_POST['name'];
+
+
+$splitage = explode(" ", "$names ");
+ 
+$string1 =  $splitage[0];
+$string2 =  $splitage[1];
+    
+    ?>
         
 <?php
     
-    if(!($stmt = $mysqli->prepare("INSERT INTO daily (stock_id, opened, closed, dateof) VALUES ((SELECT stock_id from stock s WHERE s.company = ? ),?,?,?)")))
+    if(!($stmt = $mysqli->prepare("INSERT INTO portfolio (client_id, date_created) VALUES ((SELECT client_id from client  WHERE first_name = ?  AND last_name = ?),?)")))
     {
         echo "Prepare failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
     }
     
-if(!($stmt->bind_param("sdds",$_POST['compname'],$_POST['opened'],$_POST['closed'], $_POST['dateof']))){
+if(!($stmt->bind_param("sss", $string1, $string2, $_POST['date_created']))){
 	echo "Bind failed: "  . $stmt->errno . " " . $stmt->error;
 }
             
@@ -25,7 +36,7 @@ if(!($stmt->bind_param("sdds",$_POST['compname'],$_POST['opened'],$_POST['closed
 	echo "Execute failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
     }
     else {
-        echo "Added " . $stmt->affected_rows . " rows to the daily table for this stock. And the latest stock information has been added";
+        echo "Added " . $stmt->affected_rows . " rows to the portfolio table! ";
     }   
     ?>
 

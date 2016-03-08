@@ -13,8 +13,6 @@ include("includes/header.php");
 
 
 
-<p>This is a project for CS 290 - Intro to Computer Databases. The point of this project was to demonstrate the use of a SQL database using PHP. The </p>
-
 
 
 <h2>Quick Links For TA's for Grading</h2>

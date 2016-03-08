@@ -76,7 +76,6 @@ FROM client c
     }
         
 
-    
 
         while($stmt->fetch()){
         echo "<tr> <td> $symbol</td><td>  $company  </td><td>  $qty  </td><td>  $worth  </td> <td> $purchase_price

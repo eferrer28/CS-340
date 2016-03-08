@@ -1,13 +1,12 @@
 <?php
 
-$description = "This page has to do with the advisors";
-$pageTitle = "Advisors";
+$pageTitle = "Stock Deleted!";
 
 include("includes/header.php");
 
 $cname = $_POST['company'];
 
- echo $cname  
+
 ?>
 
 <h3><?php echo $pageTitle  ?></h3>

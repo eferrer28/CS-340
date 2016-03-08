@@ -3,22 +3,15 @@
 
 <?php
 
-$description = "This page has to do with the advisors";
 $pageTitle = "Historical Data";
 
 include("includes/header.php");
 
 
-  
-
-
 ?>
 
 
-
 <h3><?php echo $pageTitle  ?></h3>
-
- <?php echo $_GET['stockID']  ?>
 
 
 

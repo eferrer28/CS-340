@@ -1,16 +1,11 @@
 
-
 <?php
 
 $pageTitle = "Clients with Holdings";
 
 include("includes/header.php");
 
-
-
 ?>
-
-
 
 <h3><?php echo $pageTitle  ?></h3>
 
@@ -80,7 +75,3 @@ include("includes/footer.php");
 
 
 ?>
-
-
-
-

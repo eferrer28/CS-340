@@ -36,18 +36,13 @@ WHERE p.portfolio_id IS NULL
     ?>
     </select>
     </div> 
-
-    
         <div>
             <label>Pick a Date</label>
-    <input type="text" name="date"  placeholder="yyyy-dd-mm" id="datepicker"  required/>
-
+    <input type="text" name="date_created"  placeholder="yyyy-dd-mm" id="datepicker"  required/>
     <input type="submit" name="insert" value="Add" />
 </div>
 
 </form>
-
-
 <?php
 include("includes/footer.php"); 
 

@@ -1,7 +1,7 @@
 <?php
 
-$description = "This page has to do with adding to the daily stock";
-$pageTitle = "Insert Today's Daily Stock Numbers";
+
+$pageTitle = "Stocks Bought";
 
 include("includes/header.php");
 

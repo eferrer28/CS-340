@@ -34,11 +34,12 @@ if(!($stmt->bind_param("ss",$_POST['cname'],$_POST['csymbol']))){
             <div>
 <form method="post" action="/~ferrere/340/final/dailyadded.php?">
 <label>Add Today's Stock info for <?php echo $cname ?></label>
-    <div>,
-    <input type="text" name="open" placeholder="Open Price" required/>
-    <input type="text" name="close" placeholder="Close Price" required/>
-    <input type="text" name="date" placeholder="yyyy-mm-dd" id="datepicker" required/> 
-    <input type="hidden" name="compname" value=<?php echo $cname ?>/>
+    <div>
+            <input type="hidden" name="compname" value="<?php echo $cname?>"/>
+    <input type="text" name="opened" placeholder="Open Price" required/>
+    <input type="text" name="closed" placeholder="Close Price" required/>
+    <input type="text" name="dateof" placeholder="yyyy-mm-dd" id="datepicker" required/> 
+
     <input type="submit" name="insert" value="Add" required/>
 </div>
            
@@ -51,9 +52,3 @@ include("includes/footer.php");
 
 
 ?>
-
-
-
-
-
-

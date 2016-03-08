@@ -12,7 +12,7 @@ include("includes/header.php");
         
 <?php
     
-    if(!($stmt = $mysqli->prepare("INSERT INTO daily (stock_id, opened, closed, dateof) VALUES ((SELECT stock_id from stock s WHERE s.company = ? ),?,?,?)")))
+    if(!($stmt = $mysqli->prepare("INSERT INTO daily (stock_id, opened, closed, dateof) VALUES ((SELECT s.stock_id from stock s WHERE s.company = ? ),?,?,?)")))
     {
         echo "Prepare failed: "  . $mysqli->connect_errno . " " . $mysqli->connect_error;
     }

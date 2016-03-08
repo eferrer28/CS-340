@@ -1,6 +1,6 @@
 <?php
 
-$pageTitle = "Stock List";
+$pageTitle = "Buy Stocks";
 
 include("includes/header.php");
 
